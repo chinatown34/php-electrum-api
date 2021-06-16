@@ -56,7 +56,7 @@ class GetAddressHistory extends AbstractMethod implements MethodInterface
         $data = $this->getClient()->execute($this->method, array_merge($optional, [
             'address' => $this->getAddress(),
         ]));
-
-        return $this->hydrate(new HistoryResponse(), $data);
+        return $data;
+        //return $this->hydrate(new HistoryResponse(), $data);
     }
 }
